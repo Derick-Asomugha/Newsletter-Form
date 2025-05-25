@@ -71,7 +71,3 @@ app.listen(process.env.PORT || port, () => {
     console.log(`server is working fine on port ${port}`);
     
 })
-// mailChimpKey:
-// 809fcf431edb3318fbb00be3ccc3d3c0-us18
-// listID
-// 34b89b74f6
