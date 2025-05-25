@@ -2,8 +2,9 @@ import express from 'express';
 import axios from 'axios';
 import {fileURLToPath} from 'url'
 import path, {dirname} from 'path'
+import dotenv from 'dotenv'
 
-
+dotenv.config();
 const app = express();
 const port = 3000;
 // const response = await axios.get()
@@ -36,8 +37,8 @@ app.post("/", async (req, res) => {
 
     };
     let jsonData = JSON.stringify(data);
-    const apiKey = "809fcf431edb3318fbb00be3ccc3d3c0-us18";
-    const listID = "34b89b74f6";
+    const apiKey = process.env.API_KEY;
+    const listID = process.env.LIST_ID;
     const dc = apiKey.split("-")[1];
 
     const url = `https://${dc}.api.mailchimp.com/3.0/lists/${listID}`;
